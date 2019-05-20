@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" type="text/css" href="http://www.image.ucar.edu/wrfdart/ensemble/sounding.css">
+<link rel="stylesheet" type="text/css" href="jquery-ui.css">
+<title>Select MPAS Sounding</title>
+
+<style>
+.land { fill: #ccc; }
+.state-boundary {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.bubble {
+  fill: #afafaf;
+  stroke: black;
+  stroke-width: 1.0px;
+}
+.mapbg { cursor: pointer; }
+.bubble .stnselected { display: block; fill: black; stroke-width: 2px;}
+.bubble .hoversnd { display: block; fill: green; stroke-width: 2px; stroke: green;}
+.bubble .selected { display: block; fill: black; stroke-width: 2px;}
+</style>
+
+<script src="http://www.image.ucar.edu/wrfdart/ensemble/d3.min.js"></script> <!-- should be D3 V3.5.3 -->
+<script src="jsfunctions.js"></script>
+<script src="jquery.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script src="http://www.image.ucar.edu/wrfdart/ensemble/topojson.v1.min.js"></script>
+
+</head>
+<body>
+
+<div id="maincontainer">
+
+<div id="bodycontainer" style="clear: both;">
+
+<div id="hodobox" style="width:560px;text-align:center;padding:100px;">
+Select MPAS sounding location
+
+<script type="text/javascript">
+/**
+ * Get the value of a querystring
+ * @param  {String} field The field to get the value of
+ * @param  {String} url   The URL to get the value from (optional)
+ * @return {String}       The field value
+ */
+var getQueryString = function ( field, url ) {
+    var href = url ? url : window.location.href;
+    var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
+    var string = reg.exec(href);
+    return string ? string[1] : null;
+};
+
+
+drawMap();
+var site = getQueryString('r')
+// If coming from regional plot...
+if(site == "us" || site == "central" || site == "west" || site == "east" || ! site || site == "al" || site == "wp" || site == "ep" || site == "global" ){
+   site = "DNR";
+}
+var project = getQueryString('p')
+
+loadNewData("");
+// Put last selected site name at bottom of plot.
+$( document ).ready(function() {
+   $('#sitetext').text(site);
+});
+
+// LOAD DATA FOR A NEW SOUNDING LOCATION
+function loadNewData(newsite) {
+  if(newsite != ""){
+     location.href = "http://www2.mmm.ucar.edu/imagearchive/mpas/images.php?f=skewt&p="+project+"&r="+newsite;
+  }
+
+}
+
+</script>
+<!-- Add a div that changes text when the hover site changes. See jsfunctions.js. -->
+<div id="sitetext"> </div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+body {
+        margin: 0px;
+	padding: 0px;
+	font: normal normal normal 14px helvetica,arial;
+	text-align: center; /** for IE centering **/
+	/**background: url('nssl_bw.png') no-repeat 200px 36px;**/
+}
+a:link,
+a:visited {
+        text-decoration: none;
+	color: #2200CC;
+}
+div.menuheader { 
+        color: #494949;
+        padding: 10px 10px 5px 10px;
+        margin: 0px 5px 0px 5px;
+	letter-spacing: 2px;
+        background-color: #fee6ce;
+        border: 1px solid #AFAFAF;
+        border-top: 0px solid #AFAFAF; 
+        font-weight: bold;
+        font-size: 14px;
+        float: left;
+        width: 120px;
+        text-align: center;
+}
+div.menuheader:hover {
+        background-color: #F5DEB3;
+        color: black;
+        border: 1px solid gray;
+        border-top: 0px solid gray;
+	cursor: pointer;
+}
+div.menuheader.title {
+	margin: 0px 0px 0px 0px;
+	padding: 3px 0px 0px 0px;
+	letter-spacing:1.75px;
+	text-align:left;
+	width:340px;
+	font-size:20px;
+	background-color: white;
+	border: 1px solid white;
+}
+div.menuheader.title a { color: black; }
+div.menuheader.title input {
+	font-size: 14px;
+	font-weight: bold;
+	color: green;
+	width: 190px;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+div#rolloverdiv {
+    padding: 0px;
+	margin: 5px auto 2px;
+	text-align: center;
+	width: 100%;
+}
+div#rollovercenter {
+	display: inline-block;
+	overflow: hidden;
+    text-align: left;
+}
+div.rollover {
+	border-top: 1px solid #EFEFEF;
+	border-bottom: 1px solid #EFEFEF;
+	width: auto;
+	text-align: center;
+	font-size: 10px;
+	padding: 10px 3px 10px 3px;
+	margin: 0px 0px 0px 0px;
+	float: left;
+	color: #CFCFCF;
+	cursor: default;
+}
+div.rollover.loaded {
+	color: #000;
+}
+div.rollover.selected.loaded {
+	background-color: #fee6ce; 
+	border-top:1px solid #000; 
+	border-bottom:1px solid #000; 
+	font-weight: bold;
+}
+div.dropdown {
+        visibility: hidden;
+        position: absolute;
+        font-size: 13px;
+        padding: 0px 0px 5px 0px;
+        margin: 24px 0px 0px 0px;
+        border: 1px solid #000;
+        background-color: #DEB887;
+}
+div.dropdown dl { margin: 5px 0px 0px 0px; }
+div.dropdown dl dt {
+	font-size: 14px;
+	letter-spacing: 2px;
+	font-weight: bold;
+	background-color: #F5DEB3;
+        padding: 4px 5px 4px 10px;
+	margin: 2px 0px 2px 0px;
+}
+div.dropdown dl dd {
+	font-size: 13px;
+	margin: 0px;
+	padding: 3px 3px 3px 10px;
+}
+div.dropdown a:hover {
+	text-decoration: underline;
+	font-weight: bold;
+}
+/** -- CONTAINERS -- **/
+div#maincontainer {
+        width: 1102px;
+	margin-left: 1px;
+        /**margin: 0 auto; **/ 
+	padding: 0px;
+	text-align: left; /** to fix IE centering **/
+}
+div#bodycontainer {
+	width: 100%; /** to fix haslayout IE issue? **/ 
+}
+div#menu {
+/**        width: 275px; **/
+        width: 275px;
+        float: left;
+        padding: 0px 0px 10px 0px;
+	/**border-left: 1px solid #BFBFBF;
+	border-right: 1px solid #BFBFBF;**/
+}
+div#image {
+        float: left;
+	margin: 10px 0 10px 10px;
+/** 	width: 975px; **/
+        width: 1000px;
+	text-align: center;
+}
+div#footer {
+	font-size: 12px;
+        padding: 10px;
+	clear: both;
+	text-align: center;
+}
+div#footer a:hover { text-decoration: underline; } 
+div.clear {
+	clear: both;
+}
